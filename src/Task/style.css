@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+}
+.headingTxt {
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+.inputField {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.inputtxtType {
+  width: 400px;
+  height: 25px;
+  border-radius: 4px;
+  border: grey solid 1px;
+}
+.validationTxt {
+  color: red;
+  font-size: 13px;
+  margin-top: 0px;
+}
+.subContainer {
+  background-color: white;
+  padding: 20px;
+}
+.inputRadioType {
+  display: flex;
+  align-items: center;
+}
+.inputCheckboxType {
+  display: flex;
+  flex-direction: column;
+}
+.checkboxes {
+  display: flex;
+  padding-bottom: 5px;
+}
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.submitBtn {
+  padding-top: 20px;
+  text-align: center;
+}
+.btnType {
+  background-color: dodgerblue;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #f2f2f2;
+}
