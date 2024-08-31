@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Modal from "react-modal";
 import "./style.css";
 
 const ToDoApp = () => {
@@ -6,6 +7,8 @@ const ToDoApp = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [editIndex, setEditIndex] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [todoToDelete, setTodoToDelete] = useState(null);
 
   const addTodo = () => {
     const newTodo = { title, description };
@@ -21,9 +24,20 @@ const ToDoApp = () => {
     resetForm();
   };
 
-  // Rewriting delete function as per your original approach
-  const deleteTodo = (todoToDelete) => {
+  const deleteTodo = (todo) => {
+    setTodoToDelete(todo);
+    setIsModalOpen(true);
+  };
+
+  const confirmDelete = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo !== todoToDelete));
+    setIsModalOpen(false);
+    setTodoToDelete(null);
+  };
+
+  const cancelDelete = () => {
+    setIsModalOpen(false);
+    setTodoToDelete(null);
   };
 
   const handleSubmit = () => {
@@ -79,6 +93,21 @@ const ToDoApp = () => {
           </li>
         ))}
       </ul>
+
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={cancelDelete}
+        contentLabel="Confirm Delete"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <h2>Confirm Delete</h2>
+        <p>Are you sure you want to delete this todo?</p>
+        <div className="modal-actions">
+          <button onClick={confirmDelete}>Yes</button>
+          <button onClick={cancelDelete}>No</button>
+        </div>
+      </Modal>
     </div>
   );
 };
