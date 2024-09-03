@@ -69,17 +69,12 @@
   color: white;
 }
 
-.todo-actions button:last-child {
-  background-color: #dc3545;
-  color: white;
-}
-
 .todo-actions button:hover:first-child {
   background-color: #0056b3;
 }
 
 .todo-actions button:hover:last-child {
-  background-color: #c82333;
+  background-color: grey;
 }
 
 .modal {
