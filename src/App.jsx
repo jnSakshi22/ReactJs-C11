@@ -7,11 +7,13 @@
 // import FunctionalMounting from "./Day-9 useEffect/1.Mounting";
 // import FunctionalAPIMounting from "./Day-9 useEffect/2.Mounting-api";
 // import InputFieldTask from "./Day-9 useEffect/3.InputFieldTask";
-import CallingAPI from "./task";
+// import CallingAPI from "./task";
 // import FuncComponent from "./Day-8 Lifecycle Methods/2. FunctionalComponent";
 // import EditList from "./Day-8/edit-list";
 // import ToDoApp from "./Task/To-Do-APP/to-do";
 // import EvenOddNumbers from "./Day-6 Array StateManagement/3.even-odd";
+
+import APITask from "./InterviewHandsOn/Promises/1. APITaskwithPromiseAll";
 
 // import ListRender from "./Task/APIDataPassingByProps/1.ListRender";
 
@@ -41,7 +43,8 @@ function App() {
       {/* <SideBarComponent /> */}
       {/* <ParentCounter /> */}
       {/* <ListRender /> */}
-      <CallingAPI />
+      {/* <CallingAPI /> */}
+      <APITask />
     </>
   );
 }
