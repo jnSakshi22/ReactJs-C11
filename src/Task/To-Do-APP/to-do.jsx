@@ -1,14 +1,14 @@
 import { useState } from "react";
-import Modal from "react-modal";
 import "./style.css";
 import EmojiPicker from "emoji-picker-react";
+import ConfirmDelete from "../Props-Passing/1. ConfirmDelete";
 
 const ToDoApp = () => {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [editIndex, setEditIndex] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isConfirmDialog, setISConfirmDialog] = useState(false);
   const [todoToDelete, setTodoToDelete] = useState(null);
   const [emojiPicker, setEmojiPicker] = useState(null);
 
@@ -32,17 +32,17 @@ const ToDoApp = () => {
 
   const deleteTodo = (todo) => {
     setTodoToDelete(todo);
-    setIsModalOpen(true);
+    setISConfirmDialog(true);
   };
 
   const confirmDelete = () => {
     setTodos((prevTodos) => prevTodos.filter((todo) => todo !== todoToDelete));
-    setIsModalOpen(false);
+    setISConfirmDialog(false);
     setTodoToDelete(null);
   };
 
   const cancelDelete = () => {
-    setIsModalOpen(false);
+    setISConfirmDialog(false);
     setTodoToDelete(null);
   };
 
@@ -126,17 +126,25 @@ const ToDoApp = () => {
               </button>
               {emojiPicker === index && (
                 <EmojiPicker
+                  style={{ position: "absolute" }}
                   onEmojiClick={(emojiObject) =>
                     handleEmojiClick(emojiObject, index)
                   }
                 />
               )}
             </div>
+            {isConfirmDialog && (
+              <ConfirmDelete
+                confirmDelete={confirmDelete}
+                cancelDelete={cancelDelete}
+                title={todo.title}
+              />
+            )}
           </li>
         ))}
       </ul>
 
-      <Modal
+      {/* <Modal
         isOpen={isModalOpen}
         onRequestClose={cancelDelete}
         contentLabel="Confirm Delete"
@@ -149,7 +157,7 @@ const ToDoApp = () => {
           <button onClick={confirmDelete}>Yes</button>
           <button onClick={cancelDelete}>No</button>
         </div>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };
