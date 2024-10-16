@@ -12,13 +12,12 @@
 // import EditList from "./Day-8/edit-list";
 // import ToDoApp from "./Task/To-Do-APP/to-do";
 // import EvenOddNumbers from "./Day-6 Array StateManagement/3.even-odd";
-
-import APITask from "./InterviewHandsOn/Promises/1. APITaskwithPromiseAll";
-
+// import APITask from "./InterviewHandsOn/Promises/1. APITaskwithPromiseAll";
+import PromiseProgress from "./InterviewHandsOn/Promises/2. PromisesProgress";
+// import AutoFocusWithReactJSUseRef from "./useRefHook/AutoFocusUseRef";
+// import ProblemSolveWithUseRef from "./useRefHook/Problem-solve-withUseRef";
 // import ListRender from "./Task/APIDataPassingByProps/1.ListRender";
-
 // import ToDoApp from "./Task/To-Do-APP/to-do";
-
 // import ParentCounter from "./Day-13-Props-Passing/1.Parent-Counter";
 // import SideBarComponent from "./Day-9 useEffect/4. SideBar";
 // import ConfigSaver from "./Revision/14thSept2024/ConfigSaver";
@@ -44,7 +43,10 @@ function App() {
       {/* <ParentCounter /> */}
       {/* <ListRender /> */}
       {/* <CallingAPI /> */}
-      <APITask />
+      {/* <APITask /> */}
+      {/* <ProblemSolveWithUseRef /> */}
+      {/* <AutoFocusWithReactJSUseRef /> */}
+      <PromiseProgress />
     </>
   );
 }
